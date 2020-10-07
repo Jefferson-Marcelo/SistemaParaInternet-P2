@@ -53,7 +53,7 @@ class Lista:
         contador = 1
 
         while(cursor != None):
-            if (cursor.dad == dado):
+            if (cursor.dado == dado):
                 return contador
 
             cursor = cursor.prox

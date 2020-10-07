@@ -1,4 +1,4 @@
-let biblioteca = [
+let escalaCores = [
     {
         cor: 'red',
         rgb: '#FF0000'
@@ -12,3 +12,6 @@ let biblioteca = [
         rgb: 'FFFFFF'
     }
     ];
+
+console.log(escalaCores.map(cores =>[cores.cor,cores.rgb]))
+
