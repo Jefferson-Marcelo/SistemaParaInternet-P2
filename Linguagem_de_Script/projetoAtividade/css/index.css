@@ -1,0 +1,287 @@
+@font-face{
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEFCFA;
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7vw;
+    background-color: #50faff;
+    border-radius: 30px; 
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: #3f3f3f;
+}
+
+header{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin: 0;
+}
+
+main{
+    margin: 0;
+    margin-top: -1.09375vw;
+}
+
+nav{
+    display: flex;    
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4ADBC8;
+    margin: 0;
+    width: 100vw;
+    height: 7vh;
+}
+
+nav .fas{
+    color: #aafdad;
+}
+
+nav .fas:hover{
+    color: #a3b6df;
+}
+
+#busca{
+    margin: 0;
+    border: 0;
+    border-radius: 5px;
+}
+
+#busca::placeholder{
+    opacity: 1;
+    padding-left: 5px;
+}
+
+#busca:focus{
+    outline: none;
+}
+
+ul{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    list-style: none;  
+    margin: 0; 
+}
+
+ul a{
+    text-decoration: none;
+    margin: 0 2em;
+    color: #3f3f3f;
+}
+
+nav input{
+    height: 3vh;
+    margin-top: 2vh;    
+}
+
+nav img{
+    width: 50px;
+}
+
+.historia{
+    background-image: url(../img/possivelBG2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position: center;
+}
+
+#titleCad{
+    text-align: center;
+}
+
+.cadProducts{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    text-align: center;
+    align-items: center;
+}
+
+.produtos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    width: 80vw;
+}
+
+.prod{
+    text-align: center;
+    margin-top: 10;
+    padding: 0;
+}
+
+.produtos img{
+    width: 200px;
+    height: 200px;
+}
+
+h3#pedido{
+    text-align: center;
+}
+
+.colaboradores{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.colaboradores img{
+    width: 200px;
+    border-radius: 50%;
+}
+
+.colaboradores p{
+    font-size: 22px;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 30%;
+    align-self: flex-start;
+    margin-left: 100px;
+}
+
+.cadastro form input{
+    margin: 5px 0;
+    padding: 7px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.cadastro input:focus{
+    outline: none;
+}
+
+#cadastroButton{
+    width: 130px;
+    align-self: center;
+    border: 0;
+    border-radius: 15px;
+    background-color: #1645;
+
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2A3E27;
+    color: #dadada;
+}
+
+footer .logoFooter img{
+    width: 150px;
+}
+
+footer .fab, .fas{
+    font-size: 30px;
+    color: #0aafab;
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+footer .fab:hover, .fas:hover{
+    color: #dadada;
+}
+
+footer input, footer select, footer textarea{
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 15px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+footer input:focus, footer select:focus, footer textarea:focus{
+    outline: none;
+}
+
+.sugestao div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sugestaoButton{
+    width: 35%;
+    height: 25px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #10f2a3;
+    margin-top: 5px;
+}
+
+.address{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.squares{
+    display: flex;
+    flex-direction: column;
+}
+
+.squaresSocial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .squaresSocial .fab{
+    margin-left: 0;
+    margin-right: 5px;
+} */
+
+.squaresSocial p{
+    margin: 0;
+    padding: 0;
+}
+
+.rows{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#totalFooter{
+    text-align: center;
+}

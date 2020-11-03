@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro exercício de DOM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1 id="title">PRIMEIRA ATIVIDADE DE LS SOBRE DOM</h1>
+        <div class="primeira">
+            <p>1. Faça um programa que receba uma temperatura na escala Celsius e a apresente na escala Farenheit e Kelvin.</p>
+            <h1>Medidor de escala</h1>
+            <div>
+                <input type="text" name="temperatura" id="temperatura" placeholder="Temperatura em Celsius">
+                <input type="submit" onclick="result()" value="resultado">        
+            </div>
+            <p id="Farenheit"></p>
+            <p id="Kelvin"></p>
+        </div>
+        <div class="segunda">
+            <p>2. Navegue pelo objeto window e realize as seguintes tarefas, se o usuário digitar:</p>
+            <div class="Alternativa">
+                <p>a- Mostre a largura da janela</p>
+                <input type="text" name="respAlternativaA"  id="alternativaA">
+                <input type="submit" onclick="letraA()" value="resultado">
+            </div>
+            <div class="Alternativa">
+                <p>b- Exiba a altura da janela</p>
+                <input type="text" name="respAlternativaB"  id="alternativaB">
+                <input type="submit" onclick="letraB()" value="resultado">
+            </div>
+            <div class="Alternativa">
+                <p>c- Redimensione a janela</p>                
+                <input type="text" name="respAlternativaC"  id="largura" placeholder="Coloque a Largura">
+                <input type="text" name="respAlternativaC"  id="altura" placeholder="Coloque a Altura">
+                <input type="submit" onclick="letraC()" value="Confirmar Alteração">
+            </div>
+            <div class="Alternativa">
+                <p>d- Feche a janela</p>                
+                <input type="submit" onclick="letraD()" value="Clique aqui para fechar">
+            </div>                
+        </div>
+        <div class="terceira">
+            <p>3. Destaque todas as palavras com mais de 8 caracteres no texto do parágrafo (com um fundo amarelo, por exemplo). Você precisa definir qual a melhor estratégia para isso.
+            </p>
+            <p id="trabalharTexto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro expedita quisquam cupiditate officia error incidunt, doloremque eos mollitia ipsa repudiandae soluta dignissimos perspiciatis labore doloribus asperiores laboriosam deleniti sint recusandae.</p>
+            <input type="submit" onclick="fundoAmarelo()" value="Clique aqui">
+        </div>
+
+   
+</body>
+</html>

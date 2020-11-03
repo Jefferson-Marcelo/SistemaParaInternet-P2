@@ -172,7 +172,7 @@ for i in range(10):
 
 print('Tamanho: ', l1.tamanho())
 
-valorRemover = l1.remover(2)
+valorRemover = l1.remover(20)
 print(valorRemover)
 print(l1)
 
@@ -186,13 +186,13 @@ l1.imprimir()
 
 #l1.inserir(-10,99)
 
-try:
-    #print(f'O indice do elemento que esta procurando se encontra na posição: {l1.busca(55)}')
-    #print(l1.elemento(5))
-    #l1.inserir(5,111)
-    #print(l1)
-    #l1.remover('1')
-    l1.modificar(100,999)
-    
-except ListaException as li:
-    print(li)
+#try:
+#    #print(f'O indice do elemento que esta procurando se encontra na posição: {l1.busca(55)}')
+#    #print(l1.elemento(5))
+#    #l1.inserir(5,111)
+#    #print(l1)
+#    #l1.remover('1')
+#    l1.modificar(100,999)
+#    
+#except ListaException as li:
+#    print(li)

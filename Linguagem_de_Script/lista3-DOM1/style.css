@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+}
+.primeira{
+    align-content: center;
+}
+
+.alternativa{
+    display: flex;
+    flex-direction: column;
+}
+
+.destaque{
+    background-color: yellow;
+}
