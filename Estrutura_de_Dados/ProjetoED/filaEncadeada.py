@@ -10,7 +10,7 @@ class FilaEncadeada:
   @property
   def head(self):
       if self.vazia():
-        raise exception.FilaException('A fila está vazia')
+        raise exception.Exception('A fila está vazia')
 
       return self.__head
 
@@ -33,7 +33,7 @@ class FilaEncadeada:
 
   def remover(self):
     if self.vazia():
-      raise exception.FilaException('A fila está vazia')
+      raise exception.Exception('A fila está vazia')
 
     self.__head = self.__head.next
     self.__size -=1 

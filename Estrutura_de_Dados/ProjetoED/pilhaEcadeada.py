@@ -9,7 +9,7 @@ class PilhaEncadeada:
   @property
   def topo(self):
       if self.vazia():
-        raise exception.PilhaException('A pilha está vazia')
+        raise exception.Exception('A pilha está vazia')
 
       return self.__topo
 
@@ -28,7 +28,7 @@ class PilhaEncadeada:
 
   def remover(self):
       if self.vazia():
-        raise exception.PilhaException('A pilha está vazia')
+        raise exception.Exception('A pilha está vazia')
 
       self.__topo = self.__topo.prox
       self.__tamanho -= 1  
@@ -52,20 +52,6 @@ class PilhaEncadeada:
 
   def modificar(self, novoValor):
       if self.vazia():
-        raise PilhaException('A pilha está vazia')
+        raise exception.Exception('A pilha está vazia')
       
       self.__topo.dado = novoValor
-
-
-p = PilhaEncadeada()
-
-p.inserir(10)
-p.inserir(20)
-p.inserir(30)
-p.inserir(40)
-print(p)
-p.remover()
-print(p)
-p.remover()
-print(p)
-
