@@ -1,21 +1,20 @@
 import musica
 
 
-class Node(musica):
-  def __init__(self, date):
-    super().__init__(self, nome, banda, album, genero, anoLancado)
-    self.__date = date
+class Node:
+  def __init__(self, data):    
+    self.__data = data
     self.__next = None
   
   # get
   @property
-  def date(self):
-    return self.__date
+  def data(self):
+    return self.__data
   
   # set
-  @date.setter
-  def date(self, newDate):
-    self.__date = newDate
+  @data.setter
+  def data(self, newData):
+    self.__data = newData
 
   # get
   @property
@@ -24,5 +23,8 @@ class Node(musica):
   
   # set
   @next.setter
-  def next(self, newDate):
-    self.__next = newDate
+  def next(self, newData):
+    self.__next = newData
+
+no1 = Node(musica.musica1)
+print(no1.data.nome)

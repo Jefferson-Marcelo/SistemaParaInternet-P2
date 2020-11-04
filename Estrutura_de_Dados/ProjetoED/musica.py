@@ -5,6 +5,7 @@ class Musica:
       self.banda = banda
       self.album = album
       self.anoLancado = anoLancado
+      
 
 
 musica1 = Musica("faroeste", "legiao", "dois" , "rock", 2000 )
@@ -12,8 +13,8 @@ musica2 = Musica("caboclo", "legiao", "dois" , "rock", 2000 )
 
 
 
-print(musica1.nome)
-print(musica2.nome)
+#print(musica1.nome)
+#print(musica2.nome)
 
 
 
