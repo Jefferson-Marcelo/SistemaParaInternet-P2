@@ -1,1 +1,1 @@
-, end=''
+"faroeste", "legiao", "dois" , "rock", 2000 

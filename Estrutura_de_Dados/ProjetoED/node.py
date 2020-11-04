@@ -1,5 +1,9 @@
-class Node:
+import musica
+
+
+class Node(musica):
   def __init__(self, date):
+    super().__init__(self, nome, banda, album, genero, anoLancado)
     self.__date = date
     self.__next = None
   
