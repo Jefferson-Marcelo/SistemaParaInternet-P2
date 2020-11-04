@@ -38,7 +38,7 @@ class PilhaEncadeada:
     p = self.__topo
 
     while p != None:
-      saida += f'{p.dado}'
+      saida += f'{p.data}'
       p = p.prox
 
       if p != None:

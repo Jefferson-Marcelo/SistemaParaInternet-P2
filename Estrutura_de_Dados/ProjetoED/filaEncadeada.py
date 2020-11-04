@@ -20,8 +20,8 @@ class FilaEncadeada:
   def size(self):
     return self.__size
   
-  def inserir(self, date):
-    createNode = node.Node(date)
+  def inserir(self, data):
+    createNode = node.Node(data)
     if self.vazia():
       self.__head = createNode
       self.__tail = createNode        
@@ -45,7 +45,7 @@ class FilaEncadeada:
     p = self.__head
 
     while p != None:
-      saida += f'{p.date}'
+      saida += f'{p.data}'
       p = p.next
 
       if p != None:

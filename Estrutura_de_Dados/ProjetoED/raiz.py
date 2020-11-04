@@ -1,4 +1,4 @@
-import filaEncadeada, pilhaEcadeada
+import filaEncadeada, pilhaEncadeada
 
 f1 = filaEncadeada.FilaEncadeada()
 f1.inserir(10)
@@ -11,7 +11,7 @@ print(f1)
 f1.remover()
 print(f1)
 
-p1 = pilhaEcadeada.PilhaEncadeada
+p1 = pilhaEncadeada.PilhaEncadeada()
 p1.inserir(10)
 p1.inserir(20)
 p1.inserir(30)
