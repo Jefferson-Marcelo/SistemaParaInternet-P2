@@ -7,5 +7,5 @@ Inserir deve informar o que o usuário esta inserindo naquele momento, e inserir
 Mensagem: 'Ano de lançamento da música que deseja encontrar: '
 Retornar: objeto com o ano e os outros elementos (sorted como parâmetro o ano)
 
-3 - Node (F)
-Organizar atributo dado da classe nó para não retornar o endereço de memória
+3 - Node (V)
+Organizar atributo dado da classe nó para não retornar o endereço de memória 
