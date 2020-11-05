@@ -28,4 +28,4 @@ class Node:
 
 no1 = Node(musica.musica1)
 print(no1.data.nome)
-print(sorted(no1.data.nome))
+print(no1.data)
