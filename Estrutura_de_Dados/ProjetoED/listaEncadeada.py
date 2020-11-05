@@ -1,4 +1,4 @@
-import node, exception
+import node, exception, musica
 
 
 class ListaEncadeada:
@@ -66,7 +66,7 @@ class ListaEncadeada:
     except:
       raise
 
-  def inserir(self, posicao, data):
+  def inserir(self, posicao):
     try:
       assert posicao > 0
 
@@ -75,13 +75,13 @@ class ListaEncadeada:
         if posicao != 1:
           raise exception.Exception('A lista está vazia. Só poderá ser inserido na posição 1')
 
-        self.__head = node.Node(data)
+        self.__head = node.Node(musica.Musica())
         self.__tamanho += 1
         return
       
       # CONDIÇÃO 2: Inserção na primeira posição em uma lista não vazia
       if posicao == 1:
-        novo = node.Node(data)
+        novo = node.Node(musica.Musica())
         novo.next = self.__head
         self.__head = novo
         self.__tamanho += 1
@@ -98,7 +98,7 @@ class ListaEncadeada:
       if p == None:
         raise exception.Exception('A posição é inválida para inserção')
       
-      novo = node.Node(data)
+      novo = node.Node(musica.Musica())
       novo.next = p.next
       p.next = novo
       self.__tamanho += 1
@@ -189,31 +189,31 @@ class ListaEncadeada:
 
 if __name__ == '__main__':
   lista = ListaEncadeada()
-  lista.inserir(1,10)
-  lista.inserir(1,20)
-  lista.inserir(1,30)
+  lista.inserir(1)
+  lista.inserir(1)
+  lista.inserir(1)
 
   print(lista)
 
   # Inserir o valor 5 entre 30 e 20
-  lista.inserir(2,5)
-  print(lista)
+  #lista.inserir(2,5)
+  #print(lista)
 
   # Inserir o valor 12 na última posição
-  lista.inserir(5,12)
-  print(lista)
+  #lista.inserir(5,12)
+  #print(lista)
 
   # Modificar o valor da posição 3 (20), para 25
-  lista.modificar(3,25)
-  print(lista)
+  #lista.modificar(3,25)
+  #print(lista)
 
   # Remover o elemento da última posição
-  lista.remover(5)
-  print(lista)
+  #lista.remover(5)
+  #print(lista)
 
   # Remover o elemento da posição 2
-  lista.remover(2)
-  print(lista)
+  #lista.remover(2)
+  #print(lista)
 
   # Remover o elemento da posição 100 ==> ERRO ==> COMPLETE O CÓDIGO PARA TRATAR A EXCEÇÃO
   # lista.remover(100)
