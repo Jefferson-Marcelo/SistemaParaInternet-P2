@@ -66,7 +66,8 @@ class ListaEncadeada:
     except:
       raise
 
-  def inserir(self, posicao):
+  def inserir(self):
+    posicao = int(input('digite a posição: '))
     try:
       assert posicao > 0
 
@@ -84,8 +85,7 @@ class ListaEncadeada:
         novo = node.Node(musica.Musica())
         novo.next = self.__head
         self.__head = novo
-        self.__tamanho += 1
-        return
+        self.__tamanho += 1      	 
 
       # CONDIÇÃO 3: Inserção após a primeira posição em uma lista não vazia
       p = self.__head
@@ -189,10 +189,10 @@ class ListaEncadeada:
 
 if __name__ == '__main__':
   lista = ListaEncadeada()
-  lista.inserir(1)
-  lista.inserir(1)
-  lista.inserir(1)
-
+  lista.inserir()
+  #lista.inserir()
+  #lista.inserir(1)
+  
   print(lista)
 
   # Inserir o valor 5 entre 30 e 20
