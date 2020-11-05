@@ -85,7 +85,7 @@ class ListaEncadeada:
         novo = node.Node(musica.Musica())
         novo.next = self.__head
         self.__head = novo
-        self.__tamanho += 1      	 
+        self.__tamanho += 1
 
       # CONDIÇÃO 3: Inserção após a primeira posição em uma lista não vazia
       p = self.__head
