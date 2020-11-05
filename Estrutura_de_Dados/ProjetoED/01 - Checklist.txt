@@ -1,0 +1,10 @@
+1 - Menu Interativo (F)
+Iniciar o Menu Interativo chamando a Lista Encadeada ('Insira elemento {posição}'). 
+'Deseja continuar?'. Se sim, continuar a inserir, caso não, pedir o tipo de organização (pilha ou fila)
+
+2 - Busca (F)
+Mensagem: 'Ano de lançamento da música que deseja encontrar: '
+Retornar: objeto com o ano e os outros elementos (sorted como parâmetro o ano)
+
+3 - Node (F)
+Organizar atributo dado da classe nó para não retornar o endereço de memória

@@ -216,5 +216,5 @@ if __name__ == '__main__':
   print(lista)
 
   # Remover o elemento da posição 100 ==> ERRO ==> COMPLETE O CÓDIGO PARA TRATAR A EXCEÇÃO
-  #lista.remover(100)
-  #print(lista)
+  # lista.remover(100)
+  # print(lista)
