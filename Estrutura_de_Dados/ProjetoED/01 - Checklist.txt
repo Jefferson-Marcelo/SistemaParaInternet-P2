@@ -1,6 +1,7 @@
 1 - Menu Interativo (F)
-Iniciar o Menu Interativo chamando a Lista Encadeada ('Insira elemento {posição}'). 
-'Deseja continuar?'. Se sim, continuar a inserir, caso não, pedir o tipo de organização (pilha ou fila)
+Perguntar qual estrutura de lista deseja trabalhar(Fila ou Pilha).
+Iniciar o Menu Interativo chamando a Lista Encadeada com todos os métodos exceto o método vázio. 
+Inserir deve informar o que o usuário esta inserindo naquele momento, e inserir de preferência numa estrutura de dicionário. 'Deseja continuar inserindo?'.
 
 2 - Busca (F)
 Mensagem: 'Ano de lançamento da música que deseja encontrar: '
