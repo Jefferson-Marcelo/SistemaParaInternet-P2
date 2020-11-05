@@ -20,7 +20,7 @@ class ListaEncadeada:
   def tamanho(self):
     return self.__tamanho
   
-  def busca(self, dado):
+  def busca(self, data):
     if self.vazia():
       raise exception.Exception('A lista está vazia')
 
@@ -28,10 +28,10 @@ class ListaEncadeada:
     contador = 1
 
     while p != None:
-      if p.dado == dado:
+      if p.data == data:
         return contador
       
-      p = p.prox
+      p = p.next
       contador += 1
 
     raise exception.Exception('O valor procurado não está na lista')
@@ -50,12 +50,12 @@ class ListaEncadeada:
 
       # Andar na lista
       while p != None and contador < posicao:
-        p = p.prox
+        p = p.next
         contador += 1
       
       # Posição encontrada
       if p != None:
-        return p.dado
+        return p.data
       
       raise exception.Exception('A posição é inválida')
     
@@ -66,7 +66,7 @@ class ListaEncadeada:
     except:
       raise
 
-  def inserir(self, posicao, dado):
+  def inserir(self, posicao, data):
     try:
       assert posicao > 0
 
@@ -75,14 +75,14 @@ class ListaEncadeada:
         if posicao != 1:
           raise exception.Exception('A lista está vazia. Só poderá ser inserido na posição 1')
 
-        self.__head = node.Node(dado)
+        self.__head = node.Node(data)
         self.__tamanho += 1
         return
       
       # CONDIÇÃO 2: Inserção na primeira posição em uma lista não vazia
       if posicao == 1:
-        novo = node.Node(dado)
-        novo.prox = self.__head
+        novo = node.Node(data)
+        novo.next = self.__head
         self.__head = novo
         self.__tamanho += 1
         return
@@ -92,15 +92,15 @@ class ListaEncadeada:
       contador = 1
       
       while (contador < posicao-1) and (p != None):
-        p = p.prox
+        p = p.next
         contador += 1
 
       if p == None:
         raise exception.Exception('A posição é inválida para inserção')
       
-      novo = node.Node(dado)
-      novo.prox = p.prox
-      p.prox = novo
+      novo = node.Node(data)
+      novo.next = p.next
+      p.next = novo
       self.__tamanho += 1
 
     except TypeError:
@@ -122,19 +122,19 @@ class ListaEncadeada:
 
       while (contador <= posicao-1) and (p != None):
         anterior = p
-        p = p.prox
+        p = p.next
         contador += 1
       
       if p == None:
         raise exception.Exception('Posição inválida para remoção')
       
-      dado = p.dado
+      data = p.data
 
       if posicao == 1:
-        self.__head = p.prox
+        self.__head = p.next
       
       else:
-        anterior.prox = p.prox
+        anterior.next = p.next
 
     except TypeError:
       raise exception.Exception('A posição deve ser um valor inteiro')
@@ -148,8 +148,8 @@ class ListaEncadeada:
     p = self.__head
 
     while p != None:
-      saida += f'{p.dado}'
-      p = p.prox
+      saida += f'{p.data}'
+      p = p.next
 
       if p != None:
         saida += ', '
@@ -171,11 +171,11 @@ class ListaEncadeada:
       contador = 1
 
       while (p != None) and (contador < posicao):
-        p = p.prox
+        p = p.next
         contador += 1
       
       if p != None:
-        p.dado = novoValor
+        p.data = novoValor
         return
       
       raise exception.Exception('Posição inválida para a lista')
