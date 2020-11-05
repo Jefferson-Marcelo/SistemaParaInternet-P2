@@ -7,7 +7,7 @@ class Musica:
     #  self.anoLancado = input('digite o ano do Lançamento da música: ')
  
   def __str__(self):
-    return f'[{self.nome}, {self.genero}]'    
+    return f'[{self.nome}, {self.banda}]'    
 #    return f'[{self.nome}, {self.genero}, {self.banda}, {self.album}, {self.anoLancado}]'
 
 musica1 = Musica()
