@@ -109,11 +109,25 @@ class Lista:
                 self.__head = novo
                 self.__tamanho +=1
                 return
+            
+            #CONDIÇÃO 3: Inserção após a primeira posição em uma lista não vazia
 
+            cursor = self.__head
+            contador = 1
+            while((contador < posicao-1) and (cursor != None)):
+                cursor = cursor.prox
+                contador += 1
+
+            if (cursor == None):
+                raise ListaException('A posição é invalidada para inserção')     
+
+            novo = Node(dado)
+            novo.prox = cursor.prox
+            cursor.prox = novo
+            self.__tamanho += 1
+            
         except TypeError:
-            raise ListaException('Coloque um número inteiro para fazer a busca')
-        except IndexError:
-            raise ListaException('Esse índice não esta na lista')
+            raise ListaException('Coloque um número inteiro para fazer a busca')        
         except AssertionError:
             raise ListaException('Posição negativa não é valida para lista')
         except:
@@ -125,20 +139,46 @@ class Lista:
             assert posicao > 0
             if (self.vazia()):
                 raise ListaException('Lista vazia. Não é possível remover elementos')
-            valor = self.__head[posicao-1]
-            del self.__head[posicao-1]
-            return valor
+
+            cursor = self.__head
+            contador = 1
+            
+            while((contador < posicao-1) and (cursor != None)):
+                anterior = cursor            
+                cursor = cursor.prox
+                contador += 1
+            
+            if (cursor == None):
+                raise ListaException('Posição invalida para remoção')
+
+            dado = cursor.dado
+
+            if (posicao == 1):
+                self.__head = cursor.prox
+
+            else:
+                anterior.prox = cursor.prox
+
+            self.__tamanho -=1
+            return dado
+
         except TypeError:
-            raise ListaException('Coloque um número inteiro para fazer a busca')
-        except IndexError:
-            raise ListaException('Esse índice não esta na lista')
+            raise ListaException('Coloque um número inteiro para fazer a busca')        
         except AssertionError:
             raise ListaException('Posição negativa não é valida para lista')
         except:
             raise
 
     def __str__(self):
-        return self.__head.__str__()
+        str = "Lista: ["
+        cursor = self.__head
+        while(cursor != None):
+            str += f'{cursor.dado}'
+            cursor = cursor.prox
+            if(cursor != None):
+                str += ', '
+        str = ']'        
+        return str
 
     def imprimir(self):
         print(self.__str__())
@@ -172,7 +212,7 @@ for i in range(10):
 
 print('Tamanho: ', l1.tamanho())
 
-valorRemover = l1.remover(20)
+valorRemover = l1.remover(10)
 print(valorRemover)
 print(l1)
 
