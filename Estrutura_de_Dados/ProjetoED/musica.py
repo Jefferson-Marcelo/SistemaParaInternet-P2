@@ -7,7 +7,7 @@ class Musica:
       self.anoLancado = anoLancado
   
   def __str__(self):
-    return 'foo'
+    return f'[{self.nome}, {self.genero}, {self.banda}, {self.album}, {self.anoLancado}]'
 
 musica1 = Musica("faroeste", "legiao", "dois" , "rock", 2000 )
 musica2 = Musica("caboclo", "legiao", "dois" , "rock", 2000 )
