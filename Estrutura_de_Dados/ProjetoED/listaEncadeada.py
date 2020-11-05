@@ -1,35 +1,5 @@
-class ListaException(Exception):
-  def __init__(self,mensagem):
-    super().__init__(mensagem)
+import node, exception
 
-"""## **Classe Nó**"""
-
-class Node:
-  def __init__(self, dado = None):
-    self.__dado = dado
-    self.__prox = None
-  
-  # get
-  @property
-  def dado(self):
-    return self.__dado
-  
-  # set
-  @dado.setter
-  def dado(self, novo):
-    self.__dado = novo
-
-  # get
-  @property
-  def prox(self):
-    return self.__prox
-  
-  # set
-  @prox.setter
-  def prox(self, novo):
-    self.__prox = novo
-
-"""## **Classe Lista Encadeada**"""
 
 class ListaEncadeada:
   def __init__(self):
@@ -52,7 +22,7 @@ class ListaEncadeada:
   
   def busca(self, dado):
     if self.vazia():
-      raise ListaException('A lista está vazia')
+      raise exception.Exception('A lista está vazia')
 
     p = self.__head
     contador = 1
@@ -64,7 +34,7 @@ class ListaEncadeada:
       p = p.prox
       contador += 1
 
-    raise ListaException('O valor procurado não está na lista')
+    raise exception.Exception('O valor procurado não está na lista')
   
   def elemento(self, posicao):
 
@@ -72,7 +42,7 @@ class ListaEncadeada:
       assert posicao > 0
       
       if self.vazia():
-          raise ListaException('A lista está vazia')
+          raise exception.Exception('A lista está vazia')
       
 
       p = self.__head
@@ -87,12 +57,12 @@ class ListaEncadeada:
       if p != None:
         return p.dado
       
-      raise ListaException('A posição é inválida')
+      raise exception.Exception('A posição é inválida')
     
     except TypeError:
-      raise ListaException('A posição deve ser um valor inteiro')
+      raise exception.Exception('A posição deve ser um valor inteiro')
     except AssertionError:
-      raise ListaException('Posição negativa não é válida')
+      raise exception.Exception('Posição negativa não é válida')
     except:
       raise
 
@@ -103,15 +73,15 @@ class ListaEncadeada:
       # CONDIÇÃO 1: Inserção se a lista estiver vazia
       if self.vazia():
         if posicao != 1:
-          raise ListaException('A lista está vazia. Só poderá ser inserido na posição 1')
+          raise exception.Exception('A lista está vazia. Só poderá ser inserido na posição 1')
 
-        self.__head = Node(dado)
+        self.__head = node.Node(dado)
         self.__tamanho += 1
         return
       
       # CONDIÇÃO 2: Inserção na primeira posição em uma lista não vazia
       if posicao == 1:
-        novo = Node(dado)
+        novo = node.Node(dado)
         novo.prox = self.__head
         self.__head = novo
         self.__tamanho += 1
@@ -126,17 +96,17 @@ class ListaEncadeada:
         contador += 1
 
       if p == None:
-        raise ListaException('A posição é inválida para inserção')
+        raise exception.Exception('A posição é inválida para inserção')
       
-      novo = Node(dado)
+      novo = node.Node(dado)
       novo.prox = p.prox
       p.prox = novo
       self.__tamanho += 1
 
     except TypeError:
-      raise ListaException('A posição deve ser um valor inteiro')
+      raise exception.Exception('A posição deve ser um valor inteiro')
     except AssertionError:
-      raise ListaException('Posição negativa não é válida')
+      raise exception.Exception('Posição negativa não é válida')
     except:
       raise
 
@@ -145,7 +115,7 @@ class ListaEncadeada:
       assert posicao > 0
 
       if self.vazia():
-        raise ListaException('Lista vazia. Não é possível remover elementos')
+        raise exception.Exception('Lista vazia. Não é possível remover elementos')
 
       p = self.__head
       contador = 1
@@ -156,7 +126,7 @@ class ListaEncadeada:
         contador += 1
       
       if p == None:
-        raise ListaException('Posição inválida para remoção')
+        raise exception.Exception('Posição inválida para remoção')
       
       dado = p.dado
 
@@ -167,9 +137,9 @@ class ListaEncadeada:
         anterior.prox = p.prox
 
     except TypeError:
-      raise ListaException('A posição deve ser um valor inteiro')
+      raise exception.Exception('A posição deve ser um valor inteiro')
     except AssertionError:
-      raise ListaException('Posição negativa não é válida')
+      raise exception.Exception('Posição negativa não é válida')
     except:
       raise
   
@@ -195,7 +165,7 @@ class ListaEncadeada:
       assert posicao > 0
 
       if self.vazia():
-        raise ListaException('Lista vazia. Não é possível remover elementos')
+        raise exception.Exception('Lista vazia. Não é possível remover elementos')
 
       p = self.__head
       contador = 1
@@ -208,12 +178,12 @@ class ListaEncadeada:
         p.dado = novoValor
         return
       
-      raise ListaException('Posição inválida para a lista')
+      raise exception.Exception('Posição inválida para a lista')
 
     except TypeError:
-      raise ListaException('A posição deve ser um valor inteiro')
+      raise exception.Exception('A posição deve ser um valor inteiro')
     except AssertionError:
-      raise ListaException('Posição negativa não é válida')
+      raise exception.Exception('Posição negativa não é válida')
     except:
       raise
 
@@ -246,5 +216,5 @@ if __name__ == '__main__':
   print(lista)
 
   # Remover o elemento da posição 100 ==> ERRO ==> COMPLETE O CÓDIGO PARA TRATAR A EXCEÇÃO
-  lista.remover(100)
-  print(lista)
+  #lista.remover(100)
+  #print(lista)
