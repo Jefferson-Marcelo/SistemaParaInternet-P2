@@ -66,7 +66,7 @@ class ListaEncadeada:
     except:
       raise
 
-  def inserir(self, posicao, data = None):
+  def inserir(self, posicao, data):
     try:
       assert posicao > 0
 
@@ -75,16 +75,17 @@ class ListaEncadeada:
         if posicao != 1:
           raise exception.Exception('A lista está vazia. Só poderá ser inserido na posição 1')
 
-        self.__head = node.Node(musica.Musica())
+        self.__head = node.Node(data)
         self.__tamanho += 1
         return
       
       # CONDIÇÃO 2: Inserção na primeira posição em uma lista não vazia
       if posicao == 1:
-        novo = node.Node(musica.Musica())
+        novo = node.Node(data)
         novo.next = self.__head
         self.__head = novo
         self.__tamanho += 1
+        return
 
       # CONDIÇÃO 3: Inserção após a primeira posição em uma lista não vazia
       p = self.__head
@@ -97,7 +98,7 @@ class ListaEncadeada:
       if p == None:
         raise exception.Exception('A posição é inválida para inserção')
     
-      novo = node.Node(musica.Musica())
+      novo = node.Node(data)
       novo.next = p.next
       p.next = novo
       self.__tamanho += 1
@@ -189,7 +190,7 @@ class ListaEncadeada:
 if __name__ == '__main__':
   lista = ListaEncadeada()
   for i in range(0, 3):
-    lista.inserir(int(input("Insira a posicao: ")))
+    lista.inserir(int(input("Insira a posicao: ")), musica.Musica())
     i += 1
   #lista.inserir()
   #lista.inserir(1)
