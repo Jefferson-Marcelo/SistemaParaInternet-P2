@@ -10,7 +10,6 @@ class Musica:
     return f'[{self.nome}, {self.banda}, {self.album}]'    
 #    return f'[{self.nome}, {self.genero}, {self.banda}, {self.album}, {self.anoLancado}]'
 
-musica1 = Musica()
-print(musica1)
+# print(musica1)
 
 

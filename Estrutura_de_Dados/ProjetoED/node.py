@@ -26,6 +26,6 @@ class Node:
   def next(self, newData):
     self.__next = newData
 
-no1 = Node(musica.musica1)
-print(no1.data.nome)
-print(no1.data)
+# no1 = Node(musica.musica1)
+#print(no1.data.nome)
+#print(no1.data)
