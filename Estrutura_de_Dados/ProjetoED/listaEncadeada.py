@@ -67,6 +67,7 @@ class ListaEncadeada:
       raise
 
   def inserir(self, posicao):
+    posicao = int(input('digite a posição: '))
     try:
       assert posicao > 0
 
@@ -189,7 +190,7 @@ class ListaEncadeada:
 if __name__ == '__main__':
   lista = ListaEncadeada()
   for i in range(0, 3):
-    lista.inserir(int(input("Insira a posicao: ")))
+    lista.inserir(1)
     i += 1
   #lista.inserir()
   #lista.inserir(1)

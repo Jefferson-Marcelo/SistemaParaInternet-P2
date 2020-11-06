@@ -1,5 +1,5 @@
 class Musica:
-  def __init__(self, dado = None):
+  def __init__(self):
       self.nome = input('digite o nome da música: ')
       self.banda = input('digite o nome da banda: ')
       self.album = input('digite o nome do album: ')
