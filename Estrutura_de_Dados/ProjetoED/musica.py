@@ -19,4 +19,4 @@ musica1 = Musica()
 musica1 = musica1.asdict()
 
 print(musica1)
-print(sorted(musica1))
+print({k: v for k, v in sorted(musica1.items(), key=lambda item: item[0])}) # Sorteando pelo álbum primeiro
