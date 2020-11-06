@@ -2,7 +2,7 @@ import musica
 
 
 class Node:
-  def __init__(self, data):    
+  def __init__(self, data = None):    
     self.__data = data
     self.__next = None
   

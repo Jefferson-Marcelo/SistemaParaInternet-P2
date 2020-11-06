@@ -66,8 +66,7 @@ class ListaEncadeada:
     except:
       raise
 
-  def inserir(self, posicao):
-    posicao = int(input('digite a posição: '))
+  def inserir(self, posicao, data = None):
     try:
       assert posicao > 0
 
@@ -97,7 +96,7 @@ class ListaEncadeada:
 
       if p == None:
         raise exception.Exception('A posição é inválida para inserção')
-      
+    
       novo = node.Node(musica.Musica())
       novo.next = p.next
       p.next = novo
@@ -190,7 +189,7 @@ class ListaEncadeada:
 if __name__ == '__main__':
   lista = ListaEncadeada()
   for i in range(0, 3):
-    lista.inserir(1)
+    lista.inserir(int(input("Insira a posicao: ")))
     i += 1
   #lista.inserir()
   #lista.inserir(1)
