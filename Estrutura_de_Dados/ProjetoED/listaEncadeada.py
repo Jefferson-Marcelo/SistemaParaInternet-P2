@@ -65,7 +65,7 @@ class ListaEncadeada:
       raise exception.Exception('Posição negativa não é válida')
     except:
       raise
-
+    
   def inserir(self, posicao, data):
     try:
       assert posicao > 0
@@ -155,7 +155,7 @@ class ListaEncadeada:
         saida += ', '
     
     saida += ']'
-    return saida
+    return saida    
 
   def imprimir(self):
     print(self.__str__())
@@ -194,7 +194,8 @@ if __name__ == '__main__':
     i += 1
   #lista.inserir()
   #lista.inserir(1)
-  
+  #lista = sorted(lista, key=musica.Musica.__getattribute__() )
+  lista.modificar((int(input("Insira a nova posicao: ")), musica.Musica()))
   print(lista)
 
   # Inserir o valor 5 entre 30 e 20
