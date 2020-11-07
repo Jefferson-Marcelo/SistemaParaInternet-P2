@@ -10,7 +10,7 @@ class PilhaEncadeada:
   @property
   def head(self):
       if self.vazia():
-        raise exception.Exception('A pilha está vazia')
+        raise Exception('A pilha está vazia')
 
       return self.__head
 
@@ -20,8 +20,8 @@ class PilhaEncadeada:
   def tamanho(self):
     return self.__tamanho
   
-  def inserir(self, dado):
-    no = node.Node(dado)
+  def inserir(self, data):
+    no = Node(data)
     no.next = self.__head
     self.__head = no
 
@@ -29,23 +29,25 @@ class PilhaEncadeada:
 
   def remover(self):
       if self.vazia():
-        raise exception.Exception('A pilha está vazia')
+        raise Exception('A pilha está vazia')
 
       self.__head = self.__head.next
       self.__tamanho -= 1  
   
+  def elemento(self):
+      if(self.vazia()):
+          raise Exception('A pilha está vazia')
+      return self.__head.data
+  
   def __str__(self):
-    saida = 'Pilha: ['
+    saida = 'Pilha:\n'
     p = self.__head
 
     while p != None:
       saida += f'{p.data}'
       p = p.next
-
-      if p != None:
-        saida += ', '
     
-    saida += ']'
+    # saida += ']'
     return saida
 
   def imprimir(self):
@@ -53,6 +55,6 @@ class PilhaEncadeada:
 
   def modificar(self, novoValor):
       if self.vazia():
-        raise exception.Exception('A pilha está vazia')
+        raise Exception('A pilha está vazia')
       
-      self.__head.dado = novoValor
+      self.__head.data = novoValor
