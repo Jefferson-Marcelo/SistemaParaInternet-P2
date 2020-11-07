@@ -1,6 +1,7 @@
 from node import Node
 from modulo.exception import Exception
 
+
 class FilaEncadeada:
   def __init__(self):
     self.__head = None

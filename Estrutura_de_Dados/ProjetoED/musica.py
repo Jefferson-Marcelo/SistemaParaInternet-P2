@@ -11,7 +11,7 @@ class Musica:
         return self.__colocacao
 
     @colocacao.setter
-    def nome(self, novaColocacao):
+    def colocacao(self, novaColocacao):
         self.__colocacao = novaColocacao
 
     @property

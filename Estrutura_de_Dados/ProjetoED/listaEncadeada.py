@@ -1,6 +1,5 @@
 from node import Node
 from modulo.exception import Exception
-# import musica
 
 
 class ListaEncadeada:
