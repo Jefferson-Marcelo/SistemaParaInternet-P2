@@ -1,6 +1,5 @@
 from node import Node
 from modulo.exception import Exception
-import musica
 
 class PilhaEncadeada:
   def __init__(self):

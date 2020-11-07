@@ -1,5 +1,6 @@
 from listaEncadeada import ListaEncadeada
 from pilhaEncadeada import PilhaEncadeada
+from filaEncadeada import FilaEncadeada
 from musica import Musica
 from modulo.shutil import print_centralizado
 
@@ -13,7 +14,7 @@ if __name__ == "__main__":
 
     lista = ListaEncadeada()
 
-    with open("musicas.txt", "r", encoding="utf8") as arq:
+    with open("musicas.csv", "r", encoding="utf8") as arq:
         musicas = arq.readlines()
         for i in range(len(musicas)):
             colocacao, nome, banda, compositor, ano = musicas[i].split(";")
@@ -42,7 +43,7 @@ if __name__ == "__main__":
         print_centralizado('A lista NÃO está vazia')
 
     print_centralizado('Checagem completa. Próximo passo: MOSTRAR ELEMENTO')
-    print_centralizado('Será mostrado o elemento 7')
+    print_centralizado('Será mostrado o elemento 10')
     input("\nPressione ENTER para continuar...")
 
     print_centralizado(f'{lista.elemento(7)}')
@@ -60,17 +61,17 @@ if __name__ == "__main__":
 
     print_centralizado(f'{lista.buscar("Geraldo Vandré")}')
 
-    print_centralizado('Busca feita. FIM DA LISTA ENCADEADA. Próximo passo: PILHA')
+    print_centralizado('Busca feita. FIM DA LISTA ENCADEADA. Próximo passo: PILHA ENCADEADA')
     input("\nPressione ENTER para continuar...")
 
-############################### PILHA ENCADEADA
+# ############################### PILHA ENCADEADA
     print_centralizado('Início da classe Pilha Encadeada.')
     print_centralizado('Serão ADICIONADOS os dados das primeiras 5 músicas.')
     input("\nPressione ENTER para continuar...")
 
     pilha = PilhaEncadeada()
 
-    with open("musicas.txt", "r", encoding="utf8") as arq:
+    with open("musicas.csv", "r", encoding="utf8") as arq:
         musicas = arq.readlines()
         for i in range(5):
             colocacao, nome, banda, compositor, ano = musicas[i].split(";")
@@ -102,47 +103,49 @@ if __name__ == "__main__":
 
     print_centralizado(f'{pilha.elemento()}')
 
-    print_centralizado('Elemento mostrado. FIM DA PILHA ENCADEADA. Próximo passo: PILHA')
+    print_centralizado('Elemento mostrado. FIM DA PILHA ENCADEADA. Próximo passo: FILA')
     input("\nPressione ENTER para continuar...")
 
 # ############################### FILA ENCADEADA
-#     print_centralizado('Início da classe Fila Encadeada.')
-#     print_centralizado('Serão ADICIONADOS os dados das primeiras 5 músicas.')
-#     input("\nPressione ENTER para continuar...")
+    print_centralizado('Início da classe Fila Encadeada.')
+    print_centralizado('Serão ADICIONADOS os dados das primeiras 10 músicas.')
+    input("\nPressione ENTER para continuar...")
 
-#     fila = PilhaEncadeada()
+    fila = FilaEncadeada()
 
-#     with open("musicas.txt", "r", encoding="utf8") as arq:
-#         musicas = arq.readlines()
-#         for i in range(5):
-#             colocacao, nome, banda, compositor, ano = musicas[i].split(";")
-#             ano = ano.strip("\n")
-#             musica = Musica(colocacao, nome, banda, compositor, ano)
-#             fila.inserir(musica)
-#             print(fila)
+    with open("musicas.csv", "r", encoding="utf8") as arq:
+        musicas = arq.readlines()
+        print(fila)
+        for i in range(10):
+            colocacao, nome, banda, compositor, ano = musicas[i].split(";")
+            ano = ano.strip("\n")
+            musica = Musica(colocacao, nome, banda, compositor, ano)
+            fila.inserir(musica)
+            print(fila)
         
 
-#     print_centralizado('Inserção completa. Próximo passo: REMOÇÃO.')
-#     input("\nPressione ENTER para continuar...")
+    print_centralizado('Inserção completa. Próximo passo: REMOÇÃO.')
+    input("\nPressione ENTER para continuar...")
 
-#     for i in range(2):
-#         fila.remover()
-#         print(fila)
-#         i += 1
+    for i in range(4):
+        fila.remover()
+        print(fila)
+        i += 1
 
-#     print_centralizado('Remoção completa. Próximo passo: Checar se está vazio, caso não, imprimir o tamanho.')
-#     input("\nPressione ENTER para continuar...")
+    print_centralizado('Remoção completa. Próximo passo: Checar se está vazio, caso não, imprimir o tamanho.')
+    input("\nPressione ENTER para continuar...")
 
-#     if fila.vazia():
-#         print_centralizado('A fila está vazia.')
-#     else:
-#         print_centralizado(f'A fila possui tamanho: {fila.tamanho()}')
-#         print_centralizado('A fila NÃO está vazia')
+    if fila.vazia():
+        print_centralizado('A fila está vazia.')
+    else:
+        print_centralizado(f'A fila possui tamanho: {fila.tamanho()}')
+        print_centralizado('A fila NÃO está vazia')
 
-#     print_centralizado('Checagem completa. Próximo passo: MOSTRAR ELEMENTO')
-#     input("\nPressione ENTER para continuar...")
+    print_centralizado('Checagem completa. Próximo passo: MOSTRAR ELEMENTO')
+    input("\nPressione ENTER para continuar...")
 
-#     print_centralizado(f'{fila.elemento()}')
+    print_centralizado(f'{fila.elemento()}')
 
-#     print_centralizado('Elemento mostrado. FIM DA PILHA ENCADEADA. Próximo passo: PILHA')
-#     input("\nPressione ENTER para continuar...")
+    print_centralizado('Elemento mostrado. FIM DA FILA ENCADEADA\n')
+    print_centralizado('FIM DO PROGRAMA!')
+    input("\nPressione ENTER para ENCERRAR...")
