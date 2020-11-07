@@ -11,15 +11,14 @@ if __name__ == "__main__":
     print_centralizado('Este programa trabalhará com as 100 maiores músicas brasileiras segundo a Rolling Stones Brasil.')
     print_centralizado('Para facilidade de visualização, com o uso da biblioteca panda só pegamos as 51 (uma boa ideia) primeiras músicas.')
     print_centralizado('Os dados da lista são, em ordem normal: Colocação no Ranking, Música, Banda ou Intérprete, Compositores e Ano.')
-
     input("\nPressione ENTER para iniciar...")
+    
     print_centralizado('Início da classe Lista Encadeada.')
     print_centralizado('Serão ADICIONADOS todos os dados sobre as músicas a seguir.')
     input("\nPressione ENTER para continuar...")
 
 
 ############################### LISTA ENCADEADA
-
     lista = ListaEncadeada()
 
     with open("musicas.csv", "r", encoding="utf8") as arq:
@@ -72,7 +71,7 @@ if __name__ == "__main__":
     print_centralizado('Busca feita. FIM DA LISTA ENCADEADA. Próximo passo: PILHA ENCADEADA')
     input("\nPressione ENTER para continuar...")
 
-# ############################### PILHA ENCADEADA
+################################ PILHA ENCADEADA
     print_centralizado('Início da classe Pilha Encadeada.')
     print_centralizado('Serão ADICIONADOS os dados das primeiras 5 músicas.')
     input("\nPressione ENTER para continuar...")
@@ -111,10 +110,10 @@ if __name__ == "__main__":
 
     print_centralizado(f'{pilha.elemento()}')
 
-    print_centralizado('Elemento mostrado. FIM DA PILHA ENCADEADA. Próximo passo: FILA')
+    print_centralizado('Elemento mostrado. FIM DA PILHA ENCADEADA. Próximo passo: FILA ENCADEADA')
     input("\nPressione ENTER para continuar...")
 
-# ############################### FILA ENCADEADA
+################################ FILA ENCADEADA
     print_centralizado('Início da classe Fila Encadeada.')
     print_centralizado('Serão ADICIONADOS os dados das primeiras 10 músicas.')
     input("\nPressione ENTER para continuar...")
