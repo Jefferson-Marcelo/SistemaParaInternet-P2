@@ -1,219 +1,211 @@
-import node, exception, musica
+from node import Node
+from modulo.exception import Exception
+import musica
 
 
 class ListaEncadeada:
-  def __init__(self):
-    self.__head = None
-    self.__tamanho = 0
+    def __init__(self):
+        self.__head = None
+        self.__tamanho = 0
 
-  @property
-  def head(self):
-    return self.__head
-  
-  @head.setter
-  def head(self, no):
-    self.__head = no
+    @property
+    def head(self):
+        return self.__head
 
-  def vazia(self):
-    return self.__tamanho == 0
-  
-  def tamanho(self):
-    return self.__tamanho
-  
-  def buscar(self, busca):
-    ponteiro = self.head
+    @head.setter
+    def head(self, no):
+        self.__head = no
 
-    while ponteiro != None:
-      if ponteiro.data == busca:
-        return ponteiro.data        
+    def vazia(self):
+        return self.__tamanho == 0
 
-      ponteiro = ponteiro.next
-        
-    return 'Dado não encontrado'
-  
-  def elemento(self, posicao):
+    def tamanho(self):
+        return self.__tamanho
 
-    try:
-      assert posicao > 0
-      
-      if self.vazia():
-          raise exception.Exception('A lista está vazia')
-      
+    def buscar(self, busca):
+        ponteiro = self.head
 
-      p = self.__head
-      contador = 1
+        while ponteiro != None:
+            if ponteiro.data.album == busca:
+                return ponteiro.data
 
-      # Andar na lista
-      while p != None and contador < posicao:
-        p = p.next
-        contador += 1
-      
-      # Posição encontrada
-      if p != None:
-        return p.data
-      
-      raise exception.Exception('A posição é inválida')
-    
-    except TypeError:
-      raise exception.Exception('A posição deve ser um valor inteiro')
-    except AssertionError:
-      raise exception.Exception('Posição negativa não é válida')
-    except:
-      raise
-    
-  def inserir(self, posicao, data):
-    try:
-      assert posicao > 0
+            ponteiro = ponteiro.next
 
-      # CONDIÇÃO 1: Inserção se a lista estiver vazia
-      if self.vazia():
-        if posicao != 1:
-          raise exception.Exception('A lista está vazia. Só poderá ser inserido na posição 1')
+        raise 'Dado não encontrado'
 
-        self.__head = node.Node(data)
-        self.__tamanho += 1
-        return
-      
-      # CONDIÇÃO 2: Inserção na primeira posição em uma lista não vazia
-      if posicao == 1:
-        novo = node.Node(data)
-        novo.next = self.__head
-        self.__head = novo
-        self.__tamanho += 1
-        return
+    def elemento(self, posicao):
 
-      # CONDIÇÃO 3: Inserção após a primeira posição em uma lista não vazia
-      p = self.__head
-      contador = 1
-      
-      while (contador < posicao-1) and (p != None):
-        p = p.next
-        contador += 1
+        try:
+            assert posicao > 0
 
-      if p == None:
-        raise exception.Exception('A posição é inválida para inserção')
-    
-      novo = node.Node(data)
-      novo.next = p.next
-      p.next = novo
-      self.__tamanho += 1
+            if self.vazia():
+                raise Exception('A lista está vazia')
 
-    except TypeError:
-      raise exception.Exception('A posição deve ser um valor inteiro')
-    except AssertionError:
-      raise exception.Exception('Posição negativa não é válida')
-    except:
-      raise
+            ponteiro = self.__head
+            contador = 1
 
-  def remover(self, posicao):
-    try:
-      assert posicao > 0
+            # Andar na lista
+            while ponteiro != None and contador < posicao:
+                ponteiro = ponteiro.next
+                contador += 1
 
-      if self.vazia():
-        raise exception.Exception('Lista vazia. Não é possível remover elementos')
+            # Posição encontrada
+            if ponteiro != None:
+                return ponteiro.data
 
-      p = self.__head
-      contador = 1
+            raise Exception('A posição é inválida')
 
-      while (contador <= posicao-1) and (p != None):
-        anterior = p
-        p = p.next
-        contador += 1
-      
-      if p == None:
-        raise exception.Exception('Posição inválida para remoção')
-      
-      data = p.data
+        except TypeError:
+            raise Exception('A posição deve ser um valor inteiro')
+        except AssertionError:
+            raise Exception('Posição negativa não é válida')
+        except:
+            raise
 
-      if posicao == 1:
-        self.__head = p.next
-      
-      else:
-        anterior.next = p.next
+    def inserir(self, posicao, data):
+        try:
+            assert posicao > 0
 
-    except TypeError:
-      raise exception.Exception('A posição deve ser um valor inteiro')
-    except AssertionError:
-      raise exception.Exception('Posição negativa não é válida')
-    except:
-      raise
-  
-  def __str__(self):
-    saida = 'Lista: ['
-    p = self.__head
+            # CONDIÇÃO 1: Inserção se a lista estiver vazia
+            if self.vazia():
+                if posicao != 1:
+                    raise Exception(
+                        'A lista está vazia. Só poderá ser inserido na posição 1')
 
-    while p != None:
-      saida += f'{p.data}'
-      p = p.next
+                self.__head = Node(data)
+                self.__tamanho += 1
+                return
 
-      if p != None:
-        saida += ', '
-    
-    saida += ']'
-    return saida    
+            # CONDIÇÃO 2: Inserção na primeira posição em uma lista não vazia
+            if posicao == 1:
+                novo = Node(data)
+                novo.next = self.__head
+                self.__head = novo
+                self.__tamanho += 1
+                return
 
-  def imprimir(self):
-    print(self.__str__())
-    
+            # CONDIÇÃO 3: Inserção após a primeira posição em uma lista não vazia
+            p = self.__head
+            contador = 1
 
-  def modificar(self, posicao, novoValor):
-    try:
-      assert posicao > 0
+            while (contador < posicao-1) and (p != None):
+                p = p.next
+                contador += 1
 
-      if self.vazia():
-        raise exception.Exception('Lista vazia. Não é possível remover elementos')
+            if p == None:
+                raise Exception('A posição é inválida para inserção')
 
-      p = self.__head
-      contador = 1
+            novo = Node(data)
+            novo.next = p.next
+            p.next = novo
+            self.__tamanho += 1
 
-      while (p != None) and (contador < posicao):
-        p = p.next
-        contador += 1
-      
-      if p != None:
-        p.data = novoValor
-        return
-      
-      raise exception.Exception('Posição inválida para a lista')
+        except TypeError:
+            raise Exception('A posição deve ser um valor inteiro')
+        except AssertionError:
+            raise Exception('Posição negativa não é válida')
+        except:
+            raise
 
-    except TypeError:
-      raise exception.Exception('A posição deve ser um valor inteiro')
-    except AssertionError:
-      raise exception.Exception('Posição negativa não é válida')
-    except:
-      raise
+    def remover(self, posicao):
+        try:
+            assert posicao > 0
 
-if __name__ == '__main__':
-  lista = ListaEncadeada()
-  for i in range(0, 3):
-    lista.inserir(int(input("Insira a posicao: ")), musica.Musica())
-    i += 1
-  #lista.inserir()
-  #lista.inserir(1)
-  #lista = sorted(lista, key=musica.Musica.__getattribute__() )
-  lista.buscar(musica.Musica())
-  print(lista)
+            if self.vazia():
+                raise Exception(
+                    'Lista vazia. Não é possível remover elementos')
 
-  # Inserir o valor 5 entre 30 e 20
-  #lista.inserir(2,5)
-  #print(lista)
+            p = self.__head
+            contador = 1
 
-  # Inserir o valor 12 na última posição
-  #lista.inserir(5,12)
-  #print(lista)
+            while (contador <= posicao-1) and (p != None):
+                anterior = p
+                p = p.next
+                contador += 1
 
-  # Modificar o valor da posição 3 (20), para 25
-  #lista.modificar(3,25)
-  #print(lista)
+            if p == None:
+                raise Exception('Posição inválida para remoção')
 
-  # Remover o elemento da última posição
-  #lista.remover(5)
-  #print(lista)
+            data = p.data
 
-  # Remover o elemento da posição 2
-  #lista.remover(2)
-  #print(lista)
+            if posicao == 1:
+                self.__head = p.next
 
-  # Remover o elemento da posição 100 ==> ERRO ==> COMPLETE O CÓDIGO PARA TRATAR A EXCEÇÃO
-  # lista.remover(100)
-  # print(lista)
+            else:
+                anterior.next = p.next
+
+        except TypeError:
+            raise Exception('A posição deve ser um valor inteiro')
+        except AssertionError:
+            raise Exception('Posição negativa não é válida')
+        except:
+            raise
+
+    def __str__(self):
+        saida = 'Lista: ['
+        p = self.__head
+
+        while p != None:
+            saida += f'{p.data}'
+            p = p.next
+            if p != None:
+                saida += ','
+        saida += ']'
+        return saida
+
+    def imprimir(self):
+        print(self.__str__())
+
+    def modificar(self, posicao, novoValor):
+        try:
+            assert posicao > 0
+
+            if self.vazia():
+                raise Exception(
+                    'Lista vazia. Não é possível remover elementos')
+
+            p = self.__head
+            contador = 1
+
+            while (p != None) and (contador < posicao):
+                p = p.next
+                contador += 1
+
+            if p != None:
+                p.data = novoValor
+                return
+
+            raise Exception('Posição inválida para a lista')
+
+        except TypeError:
+            raise Exception('A posição deve ser um valor inteiro')
+        except AssertionError:
+            raise Exception('Posição negativa não é válida')
+        except:
+            raise
+
+    def ordena(self):
+        for i in range(self.__tamanho-1):
+            curr = self.__head
+            nxt = curr.next
+            prev = None
+            while nxt:
+                if curr.data.ano > nxt.data.ano:
+                    if prev == None:
+                        prev = curr.next
+                        nxt = nxt.next
+                        prev.next = curr
+                        curr.next = nxt
+                        self.head = prev
+                    else:
+                        temp = nxt
+                        nxt = nxt.next
+                        prev.next = curr.next
+                        prev = temp
+                        temp.next = curr
+                        curr.next = nxt
+                else:
+                    prev = curr
+                    curr = nxt
+                    nxt = nxt.next
+            i = i+1
