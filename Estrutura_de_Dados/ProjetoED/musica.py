@@ -6,7 +6,7 @@ class Musica:
     #  self.genero = input('digite o nome do genero: ')
     #  self.anoLancado = input('digite o ano do Lançamento da música: ')
  
-  def __repr__(self):    _
+  def __repr__(self):    
     return f'[{self.nome}, {self.banda}, {self.album}]'    
 #    return f'[{self.nome}, {self.genero}, {self.banda}, {self.album}, {self.anoLancado}]'
 

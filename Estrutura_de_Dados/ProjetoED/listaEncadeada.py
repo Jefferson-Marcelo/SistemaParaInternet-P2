@@ -20,21 +20,16 @@ class ListaEncadeada:
   def tamanho(self):
     return self.__tamanho
   
-  def busca(self, data):
-    if self.vazia():
-      raise exception.Exception('A lista está vazia')
+  def buscar(self, busca):
+    busca = self.head
 
-    p = self.__head
-    contador = 1
+    while busca != None:
+      if busca.data == busca:
+        return busca
 
-    while p != None:
-      if p.data == data:
-        return contador
-      
-      p = p.next
-      contador += 1
-
-    raise exception.Exception('O valor procurado não está na lista')
+      busca = busca.next
+        
+    return 'Dado não encontrado'
   
   def elemento(self, posicao):
 
@@ -159,6 +154,7 @@ class ListaEncadeada:
 
   def imprimir(self):
     print(self.__str__())
+    
 
   def modificar(self, posicao, novoValor):
     try:
@@ -195,7 +191,7 @@ if __name__ == '__main__':
   #lista.inserir()
   #lista.inserir(1)
   #lista = sorted(lista, key=musica.Musica.__getattribute__() )
-  lista.modificar((int(input("Insira a nova posicao: ")), musica.Musica()))
+  lista.buscar(musica.Musica())
   print(lista)
 
   # Inserir o valor 5 entre 30 e 20
