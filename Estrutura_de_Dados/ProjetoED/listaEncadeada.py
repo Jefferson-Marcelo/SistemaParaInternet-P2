@@ -21,13 +21,13 @@ class ListaEncadeada:
     return self.__tamanho
   
   def buscar(self, busca):
-    busca = self.head
+    ponteiro = self.head
 
-    while busca != None:
-      if busca.data == busca:
-        return busca
+    while ponteiro != None:
+      if ponteiro.data == busca:
+        return ponteiro.data        
 
-      busca = busca.next
+      ponteiro = ponteiro.next
         
     return 'Dado não encontrado'
   
