@@ -1,17 +1,18 @@
-import node, exception
-
+from node import Node
+from modulo.exception import Exception
+import musica
 
 class PilhaEncadeada:
   def __init__(self):
-    self.__topo = None
+    self.__head = None
     self.__tamanho = 0
 
   @property
-  def topo(self):
+  def head(self):
       if self.vazia():
         raise exception.Exception('A pilha está vazia')
 
-      return self.__topo
+      return self.__head
 
   def vazia(self):
     return self.__tamanho == 0
@@ -21,8 +22,8 @@ class PilhaEncadeada:
   
   def inserir(self, dado):
     no = node.Node(dado)
-    no.prox = self.__topo
-    self.__topo = no
+    no.next = self.__head
+    self.__head = no
 
     self.__tamanho += 1  
 
@@ -30,16 +31,16 @@ class PilhaEncadeada:
       if self.vazia():
         raise exception.Exception('A pilha está vazia')
 
-      self.__topo = self.__topo.prox
+      self.__head = self.__head.next
       self.__tamanho -= 1  
   
   def __str__(self):
     saida = 'Pilha: ['
-    p = self.__topo
+    p = self.__head
 
     while p != None:
       saida += f'{p.data}'
-      p = p.prox
+      p = p.next
 
       if p != None:
         saida += ', '
@@ -54,4 +55,4 @@ class PilhaEncadeada:
       if self.vazia():
         raise exception.Exception('A pilha está vazia')
       
-      self.__topo.dado = novoValor
+      self.__head.dado = novoValor

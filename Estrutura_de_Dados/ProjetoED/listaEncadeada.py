@@ -26,7 +26,7 @@ class ListaEncadeada:
         ponteiro = self.head
 
         while ponteiro != None:
-            if ponteiro.data.album == busca:
+            if ponteiro.data.banda == busca:
                 return ponteiro.data
 
             ponteiro = ponteiro.next
@@ -34,7 +34,6 @@ class ListaEncadeada:
         raise 'Dado não encontrado'
 
     def elemento(self, posicao):
-
         try:
             assert posicao > 0
 
@@ -112,13 +111,12 @@ class ListaEncadeada:
             assert posicao > 0
 
             if self.vazia():
-                raise Exception(
-                    'Lista vazia. Não é possível remover elementos')
+                raise Exception('Lista vazia. Não é possível remover elementos')
 
             p = self.__head
             contador = 1
 
-            while (contador <= posicao-1) and (p != None):
+            while (contador <= posicao - 1) and (p != None):
                 anterior = p
                 p = p.next
                 contador += 1
@@ -126,13 +124,13 @@ class ListaEncadeada:
             if p == None:
                 raise Exception('Posição inválida para remoção')
 
-            data = p.data
-
             if posicao == 1:
                 self.__head = p.next
 
             else:
                 anterior.next = p.next
+            
+            self.__tamanho -= 1
 
         except TypeError:
             raise Exception('A posição deve ser um valor inteiro')
@@ -142,15 +140,14 @@ class ListaEncadeada:
             raise
 
     def __str__(self):
-        saida = 'Lista: ['
+        saida = 'Lista: \n'
         p = self.__head
 
         while p != None:
             saida += f'{p.data}'
             p = p.next
-            if p != None:
-                saida += ','
-        saida += ']'
+        
+        # saida += "]"
         return saida
 
     def imprimir(self):
