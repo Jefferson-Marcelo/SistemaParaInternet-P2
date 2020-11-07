@@ -1,26 +1,21 @@
-import filaEncadeada, pilhaEncadeada
+from lista import ListaEncadeada
+from musica import Musica
 
-f1 = filaEncadeada.FilaEncadeada()
-f1.inserir(10)
-f1.inserir(20)
-f1.inserir(30)
-f1.inserir(40)
-print(f1)
-f1.remover()
-print(f1)
-f1.remover()
-print(f1)
+if __name__ == "__main__":
+    lista = ListaEncadeada()
 
-p1 = pilhaEncadeada.PilhaEncadeada()
-p1.inserir(10)
-p1.inserir(20)
-p1.inserir(30)
-p1.inserir(40)
-print(p1)
-p1.remover()
-print(p1)
-p1.remover()
-print(p1)
+    with open("musicas.txt", "r") as arq:
+        musicas = arq.readlines()
 
+        for i in range(len(musicas)):
+            nome, banda, album, ano = musicas[i].split(",")
+            ano = ano.strip("\n")
+            musica = Musica(nome, banda, album, ano)
 
+            lista.inserir(i + 1, musica)
 
+        print(lista)
+
+        lista.ordena()
+
+        print(lista)
